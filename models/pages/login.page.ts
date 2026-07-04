@@ -19,6 +19,10 @@ export default class LoginPage {
     };
   }
 
+  public async goto() {
+    await this.page.goto("/");
+  }
+
   private async inputText(field: Locator, text: string) {
     await field.fill(text);
   }
