@@ -4,6 +4,7 @@ export default class LoginPage {
   page: Page;
 
   element: {
+    loginContainer: Locator;
     usernameField: Locator;
     passwordField: Locator;
     loginButton: Locator;
@@ -13,6 +14,7 @@ export default class LoginPage {
     this.page = page;
 
     this.element = {
+      loginContainer: this.page.locator(".login_container"),
       usernameField: this.page.locator("#user-name"),
       passwordField: this.page.locator("#password"),
       loginButton: this.page.locator("#login-button"),
