@@ -1,11 +1,13 @@
 import { Locator, Page } from "@playwright/test";
 import InventoryItemSection from "../sections/inventoryItem.section";
+import HamburgerMenuSection from "../sections/hamburgerMenu.section";
 
 export default class InventoryListPage {
   page: Page;
 
   element: {
     inventoryItems: Locator;
+    hamburgerMenu: HamburgerMenuSection;
   };
 
   constructor(page: Page) {
@@ -14,6 +16,10 @@ export default class InventoryListPage {
       inventoryItems: this.page
         .locator(".inventory_list")
         .locator(".inventory_item"),
+      hamburgerMenu: new HamburgerMenuSection(
+        this.page.locator("#menu_button_container"),
+      ),
+      //this.page.locator(".menu_button_container"),
     };
   }
 
